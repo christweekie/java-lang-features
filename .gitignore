@@ -1,5 +1,11 @@
+# IntelliJ
+.idea
+
 # Compiled class file
 *.class
+
+# maven build
+target
 
 # Log file
 *.log
