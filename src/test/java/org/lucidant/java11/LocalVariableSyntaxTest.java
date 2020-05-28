@@ -14,7 +14,7 @@ class LocalVariableSyntaxTest {
 
 
     @Test
-    @DisplayName("Illustrates type inference pre Java 11")
+    @DisplayName("Type inference pre Java 11")
     void getLambdaVarPre11() {
         // Implicitly typed params
         FilenameFilter xmlFiles = (dir, filename) -> filename.endsWith(".xml") && "target".equals(dir.getName());
@@ -24,7 +24,7 @@ class LocalVariableSyntaxTest {
 
 
     @Test
-    @DisplayName("Illustrates type inference post Java 11. Good because you can use NoNull and annotations")
+    @DisplayName("Type inference post Java 11. Good because you can use NoNull and annotations")
     void getLambdaVarFrom11() {
         FilenameFilter xmlFiles = (@NotNull var dir, @NotNull var filename)
             -> filename.endsWith(".xml") && "target".equals(dir.getName());
