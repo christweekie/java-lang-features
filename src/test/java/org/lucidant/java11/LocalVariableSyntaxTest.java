@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 
 class LocalVariableSyntaxTest {
 
-
     @Test
     @DisplayName("Type inference pre Java 11")
     void getLambdaVarPre11() {
