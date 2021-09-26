@@ -1,5 +1,6 @@
 package org.lucidant.general;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -23,6 +24,7 @@ public class Name {
     private final String forename1;
     private final String forename2;
     private final String forename3;
+    private final List<String> middleNames;
     private final String surname;
 
     public String getForenames() {

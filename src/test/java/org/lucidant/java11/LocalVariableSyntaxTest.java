@@ -21,7 +21,6 @@ class LocalVariableSyntaxTest {
         assertThat(xmlFiles.accept(new File("./target"), "logback.xml")).isTrue();
     }
 
-
     @Test
     @DisplayName("Type inference post Java 11. Good because you can use NoNull and annotations")
     void getLambdaVarFrom11() {
