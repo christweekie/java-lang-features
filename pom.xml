@@ -14,7 +14,7 @@
 	</parent>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 		<junit.version>5.7.0</junit.version>
 		<junit.platform.launcher>1.5.2</junit.platform.launcher>
 		<assertj.version>3.11.1</assertj.version>
