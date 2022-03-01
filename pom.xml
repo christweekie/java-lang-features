@@ -21,18 +21,6 @@
 		<lombok.version>1.18.16</lombok.version>
 	</properties>
 
-<!--	<dependencyManagement>-->
-<!--		<dependencies>-->
-<!--			<dependency>-->
-<!--				<groupId>org.junit</groupId>-->
-<!--				<artifactId>junit-bom</artifactId>-->
-<!--				<version>${junit.version}</version>-->
-<!--				<type>pom</type>-->
-<!--				<scope>import</scope>-->
-<!--			</dependency>-->
-<!--		</dependencies>-->
-<!--	</dependencyManagement>-->
-
 	<dependencies>
 
 		<dependency>
@@ -45,7 +33,7 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
-			<version>1.2.3</version>
+			<version>1.2.10</version>
 		</dependency>
 
 		<dependency>
