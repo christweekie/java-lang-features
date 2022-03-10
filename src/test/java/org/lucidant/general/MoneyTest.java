@@ -6,7 +6,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class MoneyTest {
 
@@ -28,7 +27,8 @@ class MoneyTest {
 
         assertThat(money1.getCurrency()).isNotNull();
 
-        assertThat(money1.sum(List.of(money1, money2), Currency.getInstance("GBP"))).isEqualTo(new BigDecimal("112.69"));
+        assertThat(money1.sum(List.of(money1, money2, money3), Currency.getInstance("GBP")))
+            .isEqualTo(new BigDecimal("150.69"));
     }
 
 
