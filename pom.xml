@@ -10,14 +10,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
+		<version>2.2.6.RELEASE</version>
 	</parent>
 
 	<properties>
 		<java.version>16</java.version>
 		<junit.version>5.8.2</junit.version>
-		<junit.platform.launcher>1.5.2</junit.platform.launcher>
-		<assertj.version>3.11.1</assertj.version>
+<!--		<junit.platform.launcher>1.5.2</junit.platform.launcher>-->
+		<assertj.version>3.22.0</assertj.version>
 		<lombok.version>1.18.22</lombok.version>
 	</properties>
 
@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.30</version>
+			<version>1.7.36</version>
 		</dependency>
 
 		<dependency>
@@ -49,24 +49,28 @@
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
+			<artifactId>junit-jupiter</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.junit.jupiter</groupId>-->
+<!--      <artifactId>junit-jupiter-engine</artifactId>-->
+<!--      <version>${junit.version}</version>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.junit.jupiter</groupId>-->
+<!--			<artifactId>junit-jupiter-params</artifactId>-->
+<!--			<version>${junit.version}</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.junit.platform</groupId>-->
+<!--			<artifactId>junit-platform-launcher</artifactId>-->
+<!--			<version>1.8.2</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 
 		<dependency>
 			<groupId>org.assertj</groupId>
