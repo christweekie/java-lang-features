@@ -37,6 +37,16 @@ public final class Money {
         return number.setScale(DECIMALS, DEFAULT_ROUNDING_MODE);
     }
 
+    public int valueb1() {
+        //b1
+        return 10;
+    }
+
+    public int valueb11() {
+        //b1
+        return 10;
+    }
+
     public BigDecimal sum(List<Money> monies, Currency currency) {
         var mc = new MathContext(100, DEFAULT_ROUNDING_MODE);
         var value = Optional.ofNullable(monies).orElse(Collections.emptyList())
