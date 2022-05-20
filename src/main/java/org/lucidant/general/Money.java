@@ -48,7 +48,8 @@ public final class Money {
     }
 
     public int value() {
-        return 100;
+        //b1
+        return 19;
     }
 
 }
