@@ -14,7 +14,7 @@
 	</parent>
 
 	<properties>
-		<java.version>16</java.version>
+		<java.version>19</java.version>
 		<junit.version>5.9.2</junit.version>
 		<assertj.version>3.24.2</assertj.version>
 		<lombok.version>1.18.26</lombok.version>
