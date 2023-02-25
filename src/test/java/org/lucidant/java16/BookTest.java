@@ -1,9 +1,14 @@
 package org.lucidant.java16;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+// Default is surprisingly PER_METHOD which is OK if you are worried about shared state in the class
+// But if you are managing that and speed is a worry, do per class
+@TestInstance(value = Lifecycle.PER_CLASS)
 class BookTest {
 
     private static final Book TALE_OF_TWO_CITIES = new Book("Tale of Two Cities", 1865, "Charles Dickens");
