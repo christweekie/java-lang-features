@@ -18,7 +18,7 @@
 		<junit.version>5.10.0</junit.version>
 		<assertj.version>3.24.2</assertj.version>
 		<lombok.version>1.18.30</lombok.version>
-		<mockito.version>5.6.0</mockito.version>
+		<mockito.version>5.7.0</mockito.version>
 	</properties>
 
 	<dependencies>
