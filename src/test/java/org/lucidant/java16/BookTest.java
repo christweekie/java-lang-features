@@ -1,5 +1,6 @@
 package org.lucidant.java16;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -11,7 +12,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @TestInstance(value = Lifecycle.PER_CLASS)
 class BookTest {
 
-    private static final Book TALE_OF_TWO_CITIES = new Book("Tale of Two Cities", 1865, "Charles Dickens");
+    private static final long ISBN = 1234567891234L;
+
+    private static final Book TALE_OF_TWO_CITIES = new Book("Tale of Two Cities", 1865, "Charles Dickens", ISBN);
 
     @Test
     void testEquality() {
@@ -19,12 +22,19 @@ class BookTest {
         assertThat(TALE_OF_TWO_CITIES.title()).isEqualTo("Tale of Two Cities");
         assertThat(TALE_OF_TWO_CITIES.publicationYear()).isEqualTo(1865);
         assertThat(TALE_OF_TWO_CITIES.author()).isEqualTo("Charles Dickens");
+        assertThat(TALE_OF_TWO_CITIES.isbn().longValue()).isEqualTo(ISBN);
+    }
 
-        assertThat(TALE_OF_TWO_CITIES)
-            .isEqualTo(new Book("Tale of Two Cities", 1865, "Charles Dickens"));
+    @Test
+    void testToString() {
+        assertThat(TALE_OF_TWO_CITIES.toString())
+                .isEqualTo("Book[title=Tale of Two Cities, publicationYear=1865, author=Charles Dickens, isbn=1234567891234]");
+    }
 
-        assertThat(TALE_OF_TWO_CITIES)
-            .isNotEqualTo(new Book("Tale of Two Cities", 1865, "charles dickens"));
+    @Test
+    void testConstructor() {
+        assertThat(new Book("Life After Life", 2009, "Kate Atkinson").toString())
+                .isEqualTo("Book[title=Life After Life, publicationYear=2009, author=Kate Atkinson, isbn=null]");
     }
 
     @Test
@@ -33,6 +43,16 @@ class BookTest {
         if (o instanceof Book book) {
             assertThat(book.formatAuthor()).isEqualTo("CHARLES DICKENS");
         }
+    }
+
+    @Test
+    void isValidIsbn() {
+        assertThat(TALE_OF_TWO_CITIES.isValidIsbn()).isTrue();
+    }
+
+    @Test
+    public void simpleEqualsContract() {
+        EqualsVerifier.simple().forClass(Book.class).verify();
     }
 
     private Object getIt() {
