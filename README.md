@@ -2,7 +2,7 @@
 To store java language feature examples by release
 
 ## Requirements
-Java 16
+Java 21
 maven
 
 ## How to run
