@@ -9,13 +9,13 @@ import java.net.http.HttpResponse.BodyHandlers;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import lombok.extern.log4j.Log4j;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SampleHttpClient {
 
-    private HttpClient httpClient = HttpClient.newBuilder()
+    private final HttpClient httpClient = HttpClient.newBuilder()
         .version(HttpClient.Version.HTTP_2)
         .followRedirects(HttpClient.Redirect.NORMAL)
         .connectTimeout(Duration.ofSeconds(20))
@@ -38,6 +38,7 @@ public class SampleHttpClient {
         HttpRequest request = getHttpRequest();
         CompletableFuture<HttpResponse<String>> future = httpClient.sendAsync(request, BodyHandlers.ofString());
 
+        //noinspection Convert2MethodRef
         String title = future.thenApply(res -> getTitle(res)).join();
 
         log.info("Done work now");

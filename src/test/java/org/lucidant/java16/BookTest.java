@@ -1,11 +1,16 @@
 package org.lucidant.java16;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
+import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
 
 // Default is surprisingly PER_METHOD which is OK if you are worried about shared state in the class
 // But if you are managing that and speed is a worry, do per class
@@ -51,9 +56,22 @@ class BookTest {
     }
 
     @Test
-    public void simpleEqualsContract() {
+    void simpleEqualsContract() {
         EqualsVerifier.simple().forClass(Book.class).verify();
     }
+
+    @Test
+    void newToListInsteadOfCollectors() {
+        var integersAsString = Arrays.asList("1", "2", "3");
+        var ints = integersAsString.stream().map(Integer::parseInt).collect(Collectors.toList());
+        var intsEquivalent = integersAsString.stream().map(Integer::parseInt).toList();
+
+        RecursiveComparisonConfiguration configuration = RecursiveComparisonConfiguration.builder()
+                .build();
+
+        assertThat(intsEquivalent).isEqualTo(ints);
+    }
+
 
     private Object getIt() {
         return TALE_OF_TWO_CITIES;
