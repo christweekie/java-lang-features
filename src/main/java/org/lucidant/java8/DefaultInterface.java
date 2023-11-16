@@ -20,6 +20,10 @@ public interface DefaultInterface {
     // functional - see test class
     int addThem(int op1, int op2);
 
+    default String greeting() {
+        return "Hello Everyone!";
+    }
+
     default void printUtf8To(String text, OutputStream outputStream){
         try {
             outputStream.write(text.getBytes(StandardCharsets.UTF_8));
