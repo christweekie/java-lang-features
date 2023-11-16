@@ -7,6 +7,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class DefaultInterfaceTest {
 
+    @SuppressWarnings("Convert2MethodRef")
     @Test
     void givenFunctionalInterface_thenImplement_andTest() {
 
