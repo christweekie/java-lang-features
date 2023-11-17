@@ -10,6 +10,7 @@ class ValueBasedBookTest {
     void checkValues() {
         final var b1 = ValueBasedBook.valueOf(10, 10);
         assertThat(b1.getP1()).isEqualTo(10);
+        assertThat(b1.getP2()).isEqualTo(10);
     }
 
 }
