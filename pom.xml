@@ -19,6 +19,8 @@
 		<assertj.version>3.24.2</assertj.version>
 		<lombok.version>1.18.30</lombok.version>
 		<mockito.version>5.7.0</mockito.version>
+<!--		<maven.compiler.target>21</maven.compiler.target>-->
+<!--		<maven.compiler.source>21</maven.compiler.source>-->
 	</properties>
 
 	<dependencies>
@@ -89,7 +91,34 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.2.2</version>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+					<compilerArgs>
+<!--						<arg>&#45;&#45;add-exports</arg>-->
+<!--						<arg>java.base/jdk.internal=ALL-UNNAMED</arg>-->
+					</compilerArgs>
+				</configuration>
+			</plugin>
+
 		</plugins>
+		<pluginManagement>
+<!--			<plugins>-->
+<!--				<plugin>-->
+<!--					<groupId>org.apache.maven.plugins</groupId>-->
+<!--					<artifactId>maven-compiler-plugin</artifactId>-->
+<!--					<version>3.11.0</version>-->
+<!--					<configuration>-->
+<!--						<compilerArgs>-->
+<!--						</compilerArgs>-->
+<!--					</configuration>-->
+<!--				</plugin>-->
+<!--			</plugins>-->
+		</pluginManagement>
 	</build>
 
 </project>

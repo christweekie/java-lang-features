@@ -11,7 +11,10 @@ import lombok.Getter;
  * - like primitives, not accessed by reference
  * - they don't have identity
  */
-@jdk.internal.ValueBased
+// Had difficulty removing the --release flag which we need to do for this.
+// See the pom.xml compiler
+//@jdk.internal.ValueBased
+@Getter
 public final class ValueBasedBook {
     private final int p1;
     private final int p2;
@@ -25,11 +28,4 @@ public final class ValueBasedBook {
         return new ValueBasedBook(x, y);
     }
 
-    public int getP1() {
-        return p1;
-    }
-
-    public int getP2() {
-        return p2;
-    }
 }
