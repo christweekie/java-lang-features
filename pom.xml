@@ -98,9 +98,7 @@
 				<configuration>
 					<source>21</source>
 					<target>21</target>
-					<compilerArgs>
-<!--						<arg>&#45;&#45;add-exports</arg>-->
-<!--						<arg>java.base/jdk.internal=ALL-UNNAMED</arg>-->
+					<compilerArgs>--enable-preview
 					</compilerArgs>
 				</configuration>
 			</plugin>
