@@ -19,8 +19,6 @@
 		<assertj.version>3.25.1</assertj.version>
 		<lombok.version>1.18.30</lombok.version>
 		<mockito.version>5.9.0</mockito.version>
-<!--		<maven.compiler.target>21</maven.compiler.target>-->
-<!--		<maven.compiler.source>21</maven.compiler.source>-->
 	</properties>
 
 	<dependencies>
@@ -74,11 +72,16 @@
 			<version>${mockito.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>nl.jqno.equalsverifier</groupId>
 			<artifactId>equalsverifier</artifactId>
 			<version>3.15.6</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>5.8.0</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -107,17 +110,6 @@
 
 		</plugins>
 		<pluginManagement>
-<!--			<plugins>-->
-<!--				<plugin>-->
-<!--					<groupId>org.apache.maven.plugins</groupId>-->
-<!--					<artifactId>maven-compiler-plugin</artifactId>-->
-<!--					<version>3.11.0</version>-->
-<!--					<configuration>-->
-<!--						<compilerArgs>-->
-<!--						</compilerArgs>-->
-<!--					</configuration>-->
-<!--				</plugin>-->
-<!--			</plugins>-->
 		</pluginManagement>
 	</build>
 
